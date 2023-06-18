@@ -1,13 +1,14 @@
 # bt-in-githab-server
-使用方法
-白嫖githab服务器
-前提：先创建这个仓库的代码空间
-1先运行【sudo su】（获取root权限）
-2看官网bt.cn Linux安装命令全能脚本，让后运行（安装宝塔面板）
-3然后运行【sh btvip.sh】（升级到开心版，可不运行）
-4最后运行【rm -f /www/server/panel/data/admin_path.pl】（删除面板安全入口）
-安装完成，访问宝塔面板
-备注：可以多次白嫖呦
+使用方法<br>
+白嫖githab服务器<br>
+前提：先创建这个仓库的代码空间<br>
+1先运行【sudo su】（获取root权限）<br>
+2看官网bt.cn Linux安装命令全能脚本，让后运行（安装宝塔面板）<br>
+3然后运行【sh btvip.sh】（升级到开心版，可不运行）<br>
+4最后运行【rm -f /www/server/panel/data/admin_path.pl】（删除面板安全入口）<br>
+安装完成，访问宝塔面板<br>
+备注：可以多次白嫖呦<br>
 
-宝塔面板最新版：https://www.bt.cn/new/download.html
-宝塔面板精简版：https://www.bt.cn/bbs/thread-1186-1-1.html
+宝塔面板最新版：https://www.bt.cn/new/download.html<br>
+宝塔面板精简版：https://www.bt.cn/bbs/thread-1186-1-1.html<br>
+内存：128M以上，推荐512M以上（纯面板约占系统10M内存）硬盘：100M以上可用硬盘空间（纯面板约占20M磁盘空间）<br>
