@@ -8,3 +8,6 @@
 4最后运行【rm -f /www/server/panel/data/admin_path.pl】（删除面板安全入口）
 安装完成，访问宝塔面板
 备注：可以多次白嫖呦
+
+宝塔面板最新版：https://www.bt.cn/new/download.html
+宝塔面板精简版：https://www.bt.cn/bbs/thread-1186-1-1.html
