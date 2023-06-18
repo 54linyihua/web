@@ -1,39 +1,39 @@
 #!/bin/bash
-PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
-export PATH
-LANG=en_US.UTF-8
+PATHPATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
+export导出路径
+LANGLANG=en_US.UTF-8
 
-if [ ! -d /www/server/panel/BTPanel ];then
-	echo "============================================="
-	echo "错误, 5.x不可以使用此命令升级!"
-	echo "5.9平滑升级到6.0的命令：curl http://io.bt.sy/install/update_to_6.sh|bash"
-	exit 0;
+if如果 [ ！-d /www/server/panel/BTPanel ];然后-d /www/server/panel/BTPanel ];then
+	回声“===========================================”"============================================="
+	echo "错误，5.x 不能使用此命令升级！""错误, 5.x不可以使用此命令升级!"
+	echo "5.9平滑升级到6.0的命令：curl http://io.bt.sy/install/update_to_6.sh|bash""5.9平滑升级到6.0的命令：curl http://io.bt.sy/install/update_to_6.sh|bash"
+	退出 0；exit 0;
 fi
 
-if [ ! -f "/www/server/panel/pyenv/bin/python3" ];then
-	echo "============================================="
-	echo "错误, 当前面板过旧/py-2.7/无pyenv环境，无法升级至最新版面板"
-	echo "请截图发帖至论坛www.bt.cn/bbs求助"
-	exit 0;
+if如果 [ ！-f "/www/server/panel/pyenv/bin/python3" ];然后-f "/www/server/panel/pyenv/bin/python3" ];then
+	回声“===========================================”"============================================="
+	echo "错误, 当前面板过旧/py-2.7/无pyenv环境，无法升级至最新版本面板""错误, 当前面板过旧/py-2.7/无pyenv环境，无法升级至最新版面板"
+	echo "请截图发布至论坛www.bt.cn/bbs求助""请截图发帖至论坛www.bt.cn/bbs求助"
+	退出 0；exit 0;
 fi
 
-clear
-echo -e " "
-echo -e "\033[31m若在使用中发现问题，请及时联系 QQ：930873023进行反馈！ \033[0m"
-echo -e " "
-echo -e "\033[31m注意：本脚本一直是免费的，若是发现收费请立刻重装系统（属于盗取脚本，可能被第三方盗取者插入后门），作者也不支持打赏！ \033[0m"
-echo -e " "
-sleep 5s
+清除
+回声-e“”-e " "
+echo -e "\033[31m若在使用中发现问题，请及时联系QQ：930873023进行反馈！\033[0m"-e "\033[31m若在使用中发现问题，请及时联系 QQ：930873023进行反馈！ \033[0m"
+回声-e“”-e " "
+echo -e "\033[31m注意：本脚本一直是免费的，若是发现收费立刻重装系统（属于盗取脚本，可能被第三方盗取者插入）后门），作者也不支持打赏！\ 033[0米”-e "\033[31m注意：本脚本一直是免费的，若是发现收费请立刻重装系统（属于盗取脚本，可能被第三方盗取者插入后门），作者也不支持打赏！ \033[0m"
+回声-e“”-e " "
+睡5秒
 
-public_file=/www/server/panel/install/public.sh
-publicFileMd5=$(md5sum ${public_file} 2>/dev/null|awk '{print $1}')
-md5check="acfc18417ee58c64ff99d186f855e3e1"
-if [ "${publicFileMd5}" != "${md5check}"  ]; then
-	wget -O Tpublic.sh http://io.bt.sy/install/public.sh -T 20;
-	publicFileMd5=$(md5sum Tpublic.sh 2>/dev/null|awk '{print $1}')
-	if [ "${publicFileMd5}" == "${md5check}"  ]; then
-		\cp -rpa Tpublic.sh $public_file
-	fi
+public_filepublic_file=/www/server/panel/install/public.sh
+publicFileMd5publicFileMd5=$(md5sum ${public_file} 2>/dev/null|awk '{print $1}')${public_file} 2>/dev/null|awk '{print $1}')
+md5checkmd5check="acfc18417ee58c64ff99d186f855e3e1""acfc18417ee58c64ff99d186f855e3e1"
+if如果 [ "${publicFileMd5}" != "${md5check}" ]; 然后"${publicFileMd5}" != "${md5check}"  ]; then
+	wget -O Tpublic.sh http://io.bt.sy/install/public.sh -T 20;-O Tpublic.sh http://io.bt.sy/install/public.sh -T 20;
+	publicFileMd5=$(md5sum Tpublic.sh 2>/dev/null|awk '{print $1}')publicFileMd5=$(md5sum Tpublic.sh 2>/dev/null|awk '{print $1}')
+	如果 [ "${publicFileMd5}" == "${md5check}" ]; 然后if [ "${publicFileMd5}" == "${md5check}"  ]; then
+		\cp -rpa Tpublic.sh $public_file-rpa Tpublic.sh $public_file
+	菲fi
 	rm -f Tpublic.sh
 fi
 . $public_file
