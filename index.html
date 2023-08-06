@@ -1,184 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>中国黑客联盟</title>
-	<meta name="keywords" content="中国黑盟云安全,黑盟云安全,引导页">
-	<meta name="description" content="中国黑盟云安全引导页">
-	<link rel="shortcut icon" href="favicon.ico" type="">
+	<meta charset="UTF-8">
+	<title>跳转页面</title>
 	<style>
 		body {
-			background-color: #282828;
-			color: #fff;
-			font-family: 'Helvetica Neue', sans-serif;
+			font-family: 'Microsoft Yahei', sans-serif;
+			background-color: #f5f5f5;
+			padding: 20px;
+			text-align: center;
 		}
 		h1 {
-			font-size: 3em;
-			text-align: center;
-			margin-top: 50px;
-			text-transform: uppercase;
+			font-size: 36px;
+			font-weight: normal;
+			margin-top: 0;
 		}
 		p {
-			font-size: 1.2em;
-			margin: 30px;
-			line-height: 1.5;
-			text-align: justify;
+			font-size: 18px;
+			margin-bottom: 20px;
 		}
-		.container {
-			max-width: 800px;
-			margin: 0 auto;
-			padding: 50px;
-		}
-		.btn {
-			display: inline-block;
-			padding: 10px 20px;
-			border: 2px solid #fff;
-			border-radius: 5px;
-			text-transform: uppercase;
-			text-decoration: none;
-			color: #fff;
-			font-size: 1.2em;
-			margin-top: 50px;
-			transition: all 0.3s ease-in-out;
-		}
-		.btn:hover {
-			background-color: #fff;
-			color: #282828;
-			cursor: pointer;
-		}
-		
-		.progress1 {
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 5px;
-			background-color: #ff0006;
-			overflow: hidden;
-			animation: progress 2s ease-in-out infinite;
-		}
-		.progress {
-			position: fixed;
-			bottom: 0;
-			left: 0;
-			width: 100%;
-			height: 5px;
-			background-color: #00bfff;
-			overflow: hidden;
-			animation: progress 2s ease-in-out infinite;
-		}
-		.bar {
-			height: 100%;
-			background-color: #fff;
-			width: 0%;
-			transition: all 0.2s ease-in-out;
-		}
-
-		@keyframes progress {
-			0% {
-				transform: translateX(-100%);
-			}
-			100% {
-				transform: translateX(0);
-			}
-		}
-
-		/* 顶部菜单栏样式 */
-		.topnav {
-			background-color: #333;
-			overflow: hidden;
-			position: relative;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			padding: 10px 20px;
-			box-sizing: border-box;
-		}
-
-		.topnav .title {
-			background-color: #333;
-			font-size: 1.5em;
-			text-transform: uppercase;
-			color: #00bfff;
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow: ellipsis;
-			box-sizing: border-box;
-		}
-
-		.topnav .menu {
-			display: flex;
-			box-sizing: border-box;
-		}
-
-		.topnav a {
-			float: left;
-			color: #f2f2f2;
-			text-align: center;
-			padding: 14px 16px;
-			text-decoration: none;
-			font-size: 17px;
-		}
-
-		.topnav a:hover {
-			background-color: #ddd;
-			color: black;
-		}
-
-		.topnav a.active {
-			background-color: #00bfff;
-			color: white;
+		#countdown {
+			font-size: 24px;
+			font-weight: bold;
+			color: #ff0000;
 		}
 	</style>
+	<script type="text/javascript">
+		window.onload = function() {
+			// 从 URL 中获取参数
+			var params = window.location.search.substr(1).split("&");
+			var time = 60; // 默认时间为 60 秒
+			var redirectUrl = "https://www.baidu.com"; // 默认跳转到百度首页
+			for (var i = 0; i < params.length; i++) {
+				var param = params[i].split("=");
+				// 如果参数名是 time，则设置倒计时时间
+				if (param[0] === "time") {
+					time = parseInt(param[1]);
+				}
+				// 如果参数名是 url，则设置跳转链接
+				if (param[0] === "url") {
+					redirectUrl = decodeURIComponent(param[1]);
+				}
+			}
+			// 显示倒计时
+			var countDown = document.getElementById("countdown");
+			countDown.innerHTML = time;
+			// 开始倒计时
+			var timer = setInterval(function() {
+				time--;
+				countDown.innerHTML = time;
+				if (time <= 0) {
+					clearInterval(timer);
+					// 跳转到指定链接
+					window.location.href = redirectUrl;
+				}
+			}, 1000);
+		}
+	</script>
 </head>
 <body>
-	</div>
-	<div class="progress1">
-		<div class="bar"></div>
-	</div>
-	<script>
-		// JavaScript代码，实现进度条效果
-		var bar = document.querySelector('.bar');
-		setInterval(function() {
-			var width = parseInt(bar.style.width) + 10;
-			if (width > 100) {
-				width = 0;
-			}
-			bar.style.width = width + '%';
-		}, 1000);
-	</script>
-	</script>
-	<!-- 顶部菜单栏 -->
-	<div class="topnav">
-		<div class="title">中国黑客联盟</div>
-		<div class="menu">
-			<a class="active" href="#">首页</a>
-			<a href="https://www.hackerit.cc/">官方网站</a>
-			<a href="https://tools.hackerit.cc/">在线工具</a>
-			<a href="https://110.hackerit.cc/">反诈中心</a>
-			<a href="https://he.hackerit.cc/">天眼系统</a>
-		</div>
-	</div>
-	<div class="container">
-		<h1>欢迎来到中国黑客联盟</h1>
-		<p>计算机正在改变我们的生活。网络安全，人工智能等技术正在影响着人类社会发展。</p>
-		<p>在这个网站上，您可以了解到最新的计算机动态、阅读有关的文章，也可以与其他计算机爱好者交流经验和想法。</p>
-		<a href="https://www.hackerit.cc" class="btn">开始探索</a>
-	</div>
-	<div class="progress">
-		<div class="bar"></div>
-	</div>
-	<script>
-		// JavaScript代码，实现进度条效果
-		var bar = document.querySelector('.bar');
-		setInterval(function() {
-			var width = parseInt(bar.style.width) + 10;
-			if (width > 100) {
-				width = 0;
-			}
-			bar.style.width = width + '%';
-		}, 1000);
-	</script>
-	<audio src="https://v1.cdn-static.cn/2022/11/12/38079_lad7o7r6.mp3" loop autoplay></audio>
-	</script>
+	<h1>跳转页面</h1>
+	<p>页面将在 <span id="countdown"></span> 秒后跳转到指定链接...</p>
 </body>
 </html>
